@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerMotor))]
+[RequireComponent(typeof(ConfigurableJoint))]
 public class PlayerController : MonoBehaviour {
 
     [SerializeField]
@@ -10,10 +11,25 @@ public class PlayerController : MonoBehaviour {
     [SerializeField]
     private float LookSenitivity = 3f;
 
+    [SerializeField]
+    private float jumpForce = 1000f;
+
+    [Header("String settings")]
+    [SerializeField]
+    private JointDriveMode jointmode = JointDriveMode.Position;
+    [SerializeField]
+    private float jointSpring = 20f;
+    [SerializeField]
+    private float jointMaxForce = 40f;
+
     private PlayerMotor motor;
+    private ConfigurableJoint joint;
     void Start()
     {
         motor = GetComponent<PlayerMotor>();
+        joint = GetComponent<ConfigurableJoint>();
+
+        SetJointSettings(jointSpring);
     }
 
     void Update()
@@ -38,8 +54,36 @@ public class PlayerController : MonoBehaviour {
         //UpAndDown
 
         float xRot = Input.GetAxisRaw("Mouse Y");
-        Vector3 camRot = new Vector3(xRot, 0f, 0f) * LookSenitivity;
-        motor.RotateCamera(camRot);
+        float camRotX = xRot * LookSenitivity;
+        motor.RotateCamera(camRotX);
 
+
+        //jump
+
+        Vector3 force = Vector3.zero;
+
+        if (Input.GetButton("Jump"))
+        {
+            force = Vector3.up * jumpForce;
+            SetJointSettings(0f);
+        }
+        else
+        {
+            SetJointSettings(jointSpring);
+        }
+
+        motor.Jump(force);
+
+    }
+
+    private void  SetJointSettings(float jSpring)
+    {
+        joint.yDrive = new JointDrive
+        {
+            mode = jointmode,
+            positionSpring = jointSpring,
+            maximumForce = jointMaxForce
+
+        };
     }
 }

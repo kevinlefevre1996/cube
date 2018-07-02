@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-C:/Users/Sandstorm/Documents/CubeRoyale/Builds/03/03.exe
+C:/Users/Benny/Documents/GitHub/cube/CubeRoyale/CubeRoyale.exe
 SceneListBegin?
 Assets/Scenes/SampleScene.unity
 SceneListEnd?
