@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4373900650227920}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 33717315094516908}
   - component: {fileID: 23550509510804484}
   - component: {fileID: 65918013117167074}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 33286048525068176}
   - component: {fileID: 23915254004871378}
   - component: {fileID: 65337926196997680}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 4458810187976726}
   - component: {fileID: 33133464015271158}
   - component: {fileID: 23139504158353878}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4578200852828880}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 20338378077427034}
   - component: {fileID: 124679295679470676}
   - component: {fileID: 81752619931776742}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 33935702685440144}
   - component: {fileID: 23648621586590012}
   - component: {fileID: 65562682835318052}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,9 +147,11 @@ GameObject:
   - component: {fileID: 114127127442058784}
   - component: {fileID: 114072623457704370}
   - component: {fileID: 153273905228010390}
-  m_Layer: 0
+  - component: {fileID: 114089123717981200}
+  - component: {fileID: 114946370594177496}
+  m_Layer: 10
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -165,7 +167,7 @@ GameObject:
   - component: {fileID: 33551347468068076}
   - component: {fileID: 23770094570820302}
   - component: {fileID: 65973080935225220}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -697,6 +699,25 @@ MonoBehaviour:
     i15: 43
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
+--- !u!114 &114089123717981200
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1967571317596332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 545c398d9d8cdd14c92626827748e082, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon:
+    name: Agun
+    damage: 10
+    range: 100
+  cam: {fileID: 20338378077427034}
+  mask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!114 &114127127442058784
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -713,6 +734,8 @@ MonoBehaviour:
   - {fileID: 114692099199041768}
   - {fileID: 20338378077427034}
   - {fileID: 81752619931776742}
+  - {fileID: 114089123717981200}
+  remoteLayerName: RemotePlayer
 --- !u!114 &114692099199041768
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -743,6 +766,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 20338378077427034}
   camRotLim: 85
+--- !u!114 &114946370594177496
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1967571317596332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5c82cb9a8ec03849adb19930dd425d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!124 &124679295679470676
 Behaviour:
   m_ObjectHideFlags: 1
