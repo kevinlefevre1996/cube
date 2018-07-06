@@ -4,6 +4,31 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
+
+    public static GameManager instance;
+
+
+    public MatchSettings matchSettings;
+
+    void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogError("multiple gameManegers");
+            
+        }
+        else
+        {
+            instance = this;
+        }
+    }
+
+
+
+
+
+    #region Player tracking
+
     private const string PLAYERID = "Player ";
 
     private static Dictionary<string, Player> players = new Dictionary<string, Player>();
@@ -42,17 +67,11 @@ public class GameManager : MonoBehaviour {
         GUILayout.EndArea();
     }*/
 
+    #endregion
+
+   
 
 
 
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

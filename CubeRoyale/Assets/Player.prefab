@@ -712,12 +712,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon:
     name: Agun
-    damage: 10
+    damage: 40
     range: 100
   cam: {fileID: 20338378077427034}
   mask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294966271
 --- !u!114 &114127127442058784
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -777,6 +777,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5c82cb9a8ec03849adb19930dd425d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
+  disableOnDeath:
+  - {fileID: 114692099199041768}
+  - {fileID: 114089123717981200}
 --- !u!124 &124679295679470676
 Behaviour:
   m_ObjectHideFlags: 1
