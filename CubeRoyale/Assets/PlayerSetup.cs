@@ -12,7 +12,7 @@ public class PlayerSetup : NetworkBehaviour {
     Behaviour[] toDisable;
 
     [SerializeField]
-    string remoteLayerName = "remotePlayer";
+    string remoteLayerName = "RemotePlayer";
 
     [SerializeField]
     GameObject playerUI;
@@ -63,7 +63,7 @@ public class PlayerSetup : NetworkBehaviour {
 
     void AssignRemoteLayer()
     {
-        gameObject.layer = 11; //LayerMask.NameToLayer(remoteLayerName); HARDCODED
+        gameObject.layer = LayerMask.NameToLayer(remoteLayerName); 
 
 
 

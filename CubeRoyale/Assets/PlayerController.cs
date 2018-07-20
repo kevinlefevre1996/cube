@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField]
     private float speed = 5f;
     [SerializeField]
-    private float LookSenitivity = 3f;
+    private float LookSenitivity = 30f;
 
     [SerializeField]
     private float jumpForce = 1000f;
@@ -33,6 +33,14 @@ public class PlayerController : MonoBehaviour {
 
     void Update()
     {
+        if (PauseMenu.isOn)
+        {
+            return;
+        }
+
+
+
+
         //calculate movement vector 
         float xMov = Input.GetAxisRaw("Horizontal");
         float zMov = Input.GetAxisRaw("Vertical");

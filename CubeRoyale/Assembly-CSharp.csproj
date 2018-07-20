@@ -62,13 +62,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\GameManager.cs" />
+    <Compile Include="Assets\HostGame.cs" />
+    <Compile Include="Assets\JoinGame.cs" />
     <Compile Include="Assets\MatchSettings.cs" />
+    <Compile Include="Assets\PauseGame.cs" />
+    <Compile Include="Assets\PauseMenu.cs" />
     <Compile Include="Assets\Player.cs" />
     <Compile Include="Assets\PlayerController.cs" />
     <Compile Include="Assets\PlayerMotor.cs" />
     <Compile Include="Assets\PlayerSetup.cs" />
     <Compile Include="Assets\PlayerShoot.cs" />
+    <Compile Include="Assets\PlayerUI.cs" />
     <Compile Include="Assets\PlayerWeapon.cs" />
+    <Compile Include="Assets\RoomListItem.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Benny/Documents/GitHub/cube/CubeRoyale/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
